@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ======================================================
+       SEO — ALTERE AQUI título, descrição e palavras-chave
+  ====================================================== -->
+  <title>Dra. Danielly Vicente | Cirurgiã-Dentista </title>
+  <meta name="description" content="Dra. Danielly Vicente, Cirurgiã-Dentista. Odontologia humanizada e personalizada: harmonização facial, implantes, lentes de contato dental, clareamento e estética odontológica.">
+  <meta name="keywords" content="cirurgiã-dentista, dentista, harmonização facial, implantes dentários, lentes de contato dental, clareamento dental, odontologia estética">
+  <meta name="author" content="Dra. Danielly Vicente">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (compartilhamento em redes sociais) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dra. Danielly Vicente | Cirurgiã-Dentista">
+  <meta property="og:description" content="Transformando sorrisos através de uma odontologia humanizada e personalizada.">
+  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- FAVICON — troque o arquivo em /images/favicon.png -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Fontes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones (Remix Icon via CDN, leve e sem framework pesado) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       LOADER INICIAL
+  ====================================================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-letter">D</span>
+      <span class="loader-ring"></span>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       HEADER / MENU FIXO
+  ====================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#home" class="brand">
+        <!-- NOME DA MARCA — altere se necessário -->
+        Dra. Danielly <span>Vicente</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#especialidades" class="nav-link">Especialidades</a></li>
+          <li><a href="#resultados" class="nav-link">Resultados</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+        <!-- WHATSAPP — troque o número no link abaixo (formato internacional, só números) -->
+        <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta"
+           class="btn btn-nav-cta" target="_blank" rel="noopener">
+          Agendar consulta
+        </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       1. HOME / HERO
+  ====================================================== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text" data-reveal>
+        <p class="eyebrow">Cirurgiã-Dentista</p>
+        <h1>
+          <!-- NOME DA DOUTORA -->
+          Dra. Danielly<br><em>Vicente</em>
+        </h1>
+        <p class="hero-quote">
+          “Transformando sorrisos através de uma odontologia humanizada e personalizada.”
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta"
+             class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="ri-whatsapp-line"></i> Agendar consulta
+          </a>
+          <a href="#contato" class="btn btn-outline">
+            Entrar em contato
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <strong>CRO</strong>
+            <span>00000-MS</span>
+          </div>
+          <div class="hero-meta-divider"></div>
+          <div class="hero-meta-item">
+            <strong>+8 anos</strong>
+            <span>de experiência clínica</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media" data-reveal>
+        <div class="hero-photo-frame">
+          <!-- FOTO PRINCIPAL DA DOUTORA — substitua em /images/doutora-hero.jpg -->
+          <img src="images/doutora-hero.jpg" alt="Dra. Danielly Vicente, cirurgiã-dentista" class="hero-photo" />
+        </div>
+        <div class="hero-badge">
+          <i class="ri-award-fill"></i>
+          <div>
+            <strong>Excelência</strong>
+            <span>em odontologia estética</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#sobre" class="scroll-cue" aria-label="Rolar para próxima seção">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ======================================================
+       2. SOBRE A DOUTORA
+  ====================================================== -->
+  <section class="section about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-media" data-reveal>
+        <!-- FOTO SECUNDÁRIA (consultório, retrato, etc.) — substitua em /images/doutora-sobre.jpg -->
+        <img src="kamal-hoseinianzade-s5TU52ZjaFA-unsplash.jpg" alt="Dra. Danielly Vicente em atendimento" class="about-photo">
+        <div class="about-photo-frame"></div>
+      </div>
+
+      <div class="about-content" data-reveal>
+        <p class="eyebrow">Sobre a doutora</p>
+        <h2>Uma trajetória dedicada a sorrisos autênticos</h2>
+
+        <!-- TEXTO DE HISTÓRIA — edite livremente -->
+        <p class="about-lead">
+          Cirurgiã-dentista com sólida trajetória em clínica geral, atuando com excelência tanto 
+          no setor público quanto no privado. Especialista em Endodontia e Cirurgia Oral 
+          Menor, com foco em diagnósticos precisos e tratamentos humanizados. Pós-graduada 
+          em Saúde Pública, possuo visão estratégica sobre gestão de saúde coletiva e 
+          promoção de bem-estar bucal. Comprometida com a atualização constante e a 
+          aplicação de técnicas modernas para garantir a segurança e satisfação do paciente.
+        </p>
+        <p>
+          Minha jornada começou na graduação em Odontologia, onde descobri minha paixão
+          pela estética e pela harmonização do sorriso. Desde então, busquei me
+          especializar continuamente, sempre acompanhando as técnicas mais modernas e
+          seguras do mercado, sem nunca perder o cuidado humano que considero essencial
+          em cada consulta.
+        </p>
+
+        <div class="about-columns">
+          <div class="about-block">
+            <h3><i class="ri-graduation-cap-line"></i> Formação acadêmica</h3>
+            <ul>
+              <li>Graduação em Odontologia </li>
+              <li>Especialização em Odontologia Estética</li>
+              <li>Pós-graduação em  Saúde Pública – FAMART</li>
+              <li>Atualização: Endodontia – ITA/MS</li>
+              <li>Atualização: Cirurgia Oral Menor – ABCD/MS</li>
+              <li>Atualização: Estomatologia</li>
+            </ul>
+          </div>
+          <div class="about-block">
+            <h3><i class="ri-medal-line"></i> Especializações</h3>
+            <ul>
+              <li>Harmonização Orofacial</li>
+              <li>Lentes de Contato Dental</li>
+              <li>Reabilitação Oral Avançada</li>
+            </ul>
+          </div>
+        </div>
+
+        <blockquote class="about-philosophy">
+          “Cada sorriso é único — meu compromisso é ouvir, entender e criar um
+          tratamento sob medida para cada pessoa que passa pela minha cadeira.”
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       3. ESPECIALIDADES
+  ====================================================== -->
+  <section class="section specialties" id="especialidades">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Áreas de atuação</p>
+        <h2>Especialidades</h2>
+        <p class="section-sub">
+          Procedimentos pensados para unir saúde bucal, estética natural e
+          autoestima — sempre com atendimento individualizado.
+        </p>
+      </div>
+
+      <!-- Para adicionar/remover especialidades, copie um .card dentro de .specialties-grid -->
+      <div class="specialties-grid">
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-sparkling-2-line"></i></div>
+          <h3>Harmonização Facial</h3>
+          <p>Procedimentos que equilibram as proporções do rosto, valorizando a beleza natural de cada paciente.</p>
+        </article>
+
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-magic-line"></i></div>
+          <h3>Lentes de Contato Dental</h3>
+          <p>Sorrisos uniformes e naturais, com técnica minimamente invasiva e resultado duradouro.</p>
+        </article>
+
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-sun-line"></i></div>
+          <h3>Clareamento Dental</h3>
+          <p>Dentes mais claros e saudáveis com protocolos seguros e acompanhamento profissional.</p>
+        </article>
+
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-tools-line"></i></div>
+          <h3>Implantes Dentários</h3>
+          <p>Reposição de dentes com tecnologia de ponta, conforto e segurança em cada etapa.</p>
+        </article>
+
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-shield-star-line"></i></div>
+          <h3>Estética Odontológica</h3>
+          <p>Tratamentos personalizados que unem função e beleza para um sorriso harmônico.</p>
+        </article>
+
+        <article class="card specialty-card" data-reveal>
+          <div class="card-icon"><i class="ri-scissors-2-line"></i></div>
+          <h3>Cirurgias Odontológicas</h3>
+          <p>Procedimentos cirúrgicos realizados com precisão técnica e total cuidado com o paciente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       4. RESULTADOS / ANTES E DEPOIS
+  ====================================================== -->
+  <section class="section results" id="resultados">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Transformações reais</p>
+        <h2>Resultados</h2>
+        <p class="section-sub">
+          Cada transformação representa uma história de confiança e cuidado individual.
+        </p>
+      </div>
+
+      <!-- Para adicionar um novo resultado, copie um .result-card -->
+      <div class="results-grid">
+        <article class="result-card" data-reveal>
+          <div class="result-images">
+            <div class="result-img-wrap">
+              <img src="ozkan-guner-oJFXtJPV9Pg-unsplash.jpg" alt="Antes do procedimento de lentes de contato dental">
+              <span class="result-tag">Antes</span>
+            </div>
+            <div class="result-img-wrap">
+              <img src="tony-litvyak-glPVwPr1FKo-unsplash.jpg" alt="Depois do procedimento de lentes de contato dental">
+              <span class="result-tag result-tag--depois">Depois</span>
+            </div>
+          </div>
+          <div class="result-info">
+            <h3>Lentes de Contato Dental</h3>
+            <p>Sorriso harmonizado e mais uniforme, mantendo a naturalidade dos dentes.</p>
+          </div>
+        </article>
+
+        <article class="result-card" data-reveal>
+          <div class="result-images">
+            <div class="result-img-wrap">
+              <img src="ozkan-guner-7Mut2WMWttA-unsplash.jpg" alt="Antes do clareamento dental">
+              <span class="result-tag">Antes</span>
+            </div>
+            <div class="result-img-wrap">
+              <img src="lafayett-zapata-montero-loBRFqXm1QA-unsplash.jpg" alt="Depois do clareamento dental">
+              <span class="result-tag result-tag--depois">Depois</span>
+            </div>
+          </div>
+          <div class="result-info">
+            <h3>Clareamento Dental</h3>
+            <p>Tom mais claro e uniforme alcançado com protocolo seguro e progressivo.</p>
+          </div>
+        </article>
+
+        <article class="result-card" data-reveal>
+          <div class="result-images">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       5. DEPOIMENTOS
+  ====================================================== -->
+  <section class="section testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">O que dizem os pacientes</p>
+        <h2>Depoimentos</h2>
+      </div>
+
+      <!-- Para adicionar um depoimento, copie um .testimonial-card -->
+      <div class="testimonials-grid">
+        <article class="card testimonial-card" data-reveal>
+          <div class="stars" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
+          <p>“Me senti acolhida desde a primeira consulta. O resultado do meu sorriso superou todas as expectativas!”</p>
+          <div class="testimonial-author">
+            <img src="aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Paciente Mariana Souza">
+            <div>
+              <strong>Mariana Souza</strong>
+              <span>Lentes de Contato Dental</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card testimonial-card" data-reveal>
+          <div class="stars" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
+          <p>“Profissionalismo, cuidado e muita atenção aos detalhes. Recomendo de olhos fechados.”</p>
+          <div class="testimonial-author">
+            <img src="alex-suprun-ZHvM3XIOHoE-unsplash.jpg" alt="Paciente Carlos Eduardo">
+            <div>
+              <strong>Carlos Eduardo</strong>
+              <span>Implante Dentário</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       6. CONTATO
+  ====================================================== -->
+  <section class="section contact" id="contato">
+    <div class="container contact-grid">
+      <div class="contact-info" data-reveal>
+        <p class="eyebrow">Vamos conversar</p>
+        <h2>Entre em contato</h2>
+        <p class="section-sub" style="margin-bottom: 2.5rem;">
+          Agende sua avaliação ou tire suas dúvidas pelos canais abaixo.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta target="_blank" rel="noopener">
+              <span class="contact-icon"><i class="ri-whatsapp-line"></i></span>
+              <span>
+                <strong>WhatsApp</strong>
+                <small>(67) 98119-0053</small>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+5511999999999">
+              <span class="contact-icon"><i class="ri-phone-line"></i></span>
+              <span>
+                <strong>Telefone</strong>
+                <small>(67) 98119-0053</small>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/dradaniellyvicente" target="_blank" rel="noopener">
+              <span class="contact-icon"><i class="ri-instagram-line"></i></span>
+              <span>
+                <strong>Instagram</strong>
+                <small>@dradaniellyvicente</small>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/dradaniellyvicente" target="_blank" rel="noopener">
+              <span class="contact-icon"><i class="ri-facebook-circle-line"></i></span>
+              <span>
+                <strong>Facebook</strong>
+                <small>/dradaniellyvicente</small>
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="social-row">
+          <a href="https://instagram.com/dradaniellyvicente" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="https://facebook.com/dradaniellyvicente" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a>
+          <a href="https://wa.me/5567981190053" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-map" data-reveal>
+        <!-- GOOGLE MAPS — substitua o "src" pelo link de incorporação do seu endereço -->
+        <iframe
+          src="https://www.google.com/maps?q=Avenida%20Paulista%2C%20S%C3%A3o%20Paulo&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização do consultório">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       RODAPÉ
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand">Dra. Danielly <span>Vicente</span></a>
+      <p>Cirurgiã-Dentista · CRO 00000-SP</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Dra. Danielly Vicente. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+  ====================================================== -->
+  <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta"
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
