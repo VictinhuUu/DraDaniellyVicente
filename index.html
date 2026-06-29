@@ -52,7 +52,7 @@
     <div class="header-inner">
       <a href="#home" class="brand">
         <!-- NOME DA MARCA — altere se necessário -->
-        Dra. Danielly <span>Vicente</span>
+        <span>Dra.</span> Danielly Vicente
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -352,24 +352,14 @@
       </div> 
     </div> 
   </section>
-
-  <section class="section bottom-image-section">
-    <div class="container">
-      <div class="bottom-photo-frame" data-reveal>
-        <img src="img1.png" alt="Paciente infantil sorrindo" class="bottom-photo" />
-      </div>
-      <!-- Foto 2: Dra. no Consultório -->
-        <div class="bottom-photo-frame" data-reveal>
-          <img src="imagem prof 2.jpeg" alt="Dra. Danielly Vicente analisando Raio-X" class="bottom-photo" />
-        </div>
-    </div>
-  </section>
   
   <!-- ======================================================
        6. CONTATO
   ====================================================== -->
   <section class="section contact" id="contato">
     <div class="container contact-grid">
+      
+      <!-- LADO ESQUERDO: INFORMAÇÕES DE CONTATO -->
       <div class="contact-info" data-reveal>
         <p class="eyebrow">Vamos conversar</p>
         <h2>Entre em contato</h2>
@@ -379,7 +369,7 @@
 
         <ul class="contact-list">
           <li>
-            <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta target="_blank" rel="noopener">
+            <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener">
               <span class="contact-icon"><i class="ri-whatsapp-line"></i></span>
               <span>
                 <strong>WhatsApp</strong>
@@ -388,7 +378,7 @@
             </a>
           </li>
           <li>
-            <a href="tel:+5511999999999">
+            <a href="tel:+5567981190053">
               <span class="contact-icon"><i class="ri-phone-line"></i></span>
               <span>
                 <strong>Telefone</strong>
@@ -421,8 +411,15 @@
           <a href="https://facebook.com/dradaniellyvicente" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a>
           <a href="https://wa.me/5567981190053" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
         </div>
+      </div> <!-- FIM DO LADO ESQUERDO -->
+
+      <!-- LADO DIREITO: FOTO -->
+      <div class="contact-image-wrapper" data-reveal>
+        <!-- Vi na sua print que carregou a foto da doutora, se quiser a da criança é só garantir que o src="img1.png" está correto aqui -->
+        <img src="img1.png" alt="Paciente" class="contact-photo" />
       </div>
-    </div>
+
+    </div> <!-- FIM DO CONTAINER CONTACT-GRID (A foto estava caindo fora dessa div) -->
   </section>
 
   
@@ -431,7 +428,7 @@
   ====================================================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="#home" class="brand">Dra. Danielly <span>Vicente</span></a>
+      <a href="#home" class="brand"><span>Dra.</span> Danielly Vicente</a>
       <p>Cirurgiã-Dentista · CRO 77-20-MS</p>
       <p class="footer-copy">&copy; <span id="year"></span> Dra. Danielly Vicente. Todos os direitos reservados.</p>
     </div>
