@@ -17,9 +17,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect, // <-- Altere aqui
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  setPersistence,
+  browserLocalPersistence
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore,
@@ -65,15 +68,45 @@ const COLLECTION_NAME = "avaliacoes";
    =========================================================== */
 
 /**
- * Abre o popup de login do Google.
+ * Abre o fluxo de login do Google via redirect.
+ * IMPORTANTE: signInWithRedirect só funciona corretamente se
+ * getRedirectResult() for chamado quando a página recarrega
+ * após o retorno do Google (ver finalizarLoginRedirect()).
  */
 async function loginComGoogle() {
   try {
-    // Usar Popup é muito mais estável em dispositivos móveis e navegadores modernos
-    await signInWithRedirect(auth, provider); 
+    await setPersistence(auth, browserLocalPersistence);
+    await signInWithRedirect(auth, provider);
   } catch (error) {
     console.error("Erro ao fazer login:", error);
     exibirErro("Não foi possível entrar com o Google. Tente novamente.");
+  }
+}
+
+/**
+ * Finaliza o fluxo de signInWithRedirect.
+ *
+ * Este passo é OBRIGATÓRIO: quando o usuário volta do Google, o
+ * Firebase precisa que getRedirectResult() seja chamado para
+ * concluir a autenticação e persistir a sessão — especialmente
+ * em navegadores mobile (Safari/iOS, WebViews) que restringem
+ * armazenamento entre contextos de terceiros. Sem essa chamada,
+ * o login pode "acontecer" no Google mas nunca se consolidar no
+ * seu site, e o app fica sem erro nenhum no console: só falha
+ * silenciosamente e volta ao estado deslogado.
+ */
+async function finalizarLoginRedirect() {
+  try {
+    const result = await getRedirectResult(auth);
+    if (result && result.user) {
+      console.log("Login via redirect concluído:", result.user.displayName);
+    }
+  } catch (error) {
+    // Erros comuns aqui: domínio não autorizado, popup/redirect
+    // bloqueado, cookies de terceiros desativados no navegador do
+    // celular, ou conta com múltiplos provedores conflitantes.
+    console.error("Erro ao finalizar login via redirect:", error.code, error.message);
+    exibirErro("Não foi possível concluir o login com o Google. Tente novamente.");
   }
 }
 
@@ -104,19 +137,20 @@ function observarAutenticacao() {
   if (!btnLogin) return;
 
   onAuthStateChanged(auth, (user) => {
+    console.log("[auth] estado alterado:", user ? `logado (${user.uid})` : "deslogado");
+
     if (user) {
       // Usuário logado
       btnLogin.style.setProperty("display", "none", "important");
-      
-      // Força o wrapper do formulário a aparecer mudando para 'block' de forma prioritária
+
       if (formWrapper) {
         formWrapper.style.setProperty("display", "block", "important");
       }
-      
+
       if (userInfo) {
         userInfo.style.setProperty("display", "flex", "important");
-        userPhoto.src = user.photoURL || "";
-        userName.textContent = user.displayName || "Usuário";
+        if (userPhoto) userPhoto.src = user.photoURL || "";
+        if (userName) userName.textContent = user.displayName || "Usuário";
       }
     } else {
       // Usuário deslogado
@@ -210,6 +244,7 @@ function escutarDepoimentosRecentes(qtd = 3) {
     renderizarDepoimentos(docs, grid);
   }, (error) => {
     console.error("Erro ao carregar depoimentos:", error);
+    grid.innerHTML = `<p class="testimonials-empty">Não foi possível carregar os depoimentos agora.</p>`;
   });
 }
 
@@ -232,6 +267,8 @@ function escutarTodosDepoimentos() {
     atualizarContador(docs.length);
   }, (error) => {
     console.error("Erro ao carregar avaliações:", error);
+    grid.innerHTML = `<p class="testimonials-empty">Não foi possível carregar as avaliações agora. Recarregue a página.</p>`;
+    atualizarContador(0);
   });
 }
 
@@ -361,6 +398,11 @@ function escaparHTML(texto) {
 document.addEventListener("DOMContentLoaded", () => {
   observarAutenticacao();
   configurarFormulario();
+
+  // Finaliza o login vindo do redirect do Google, se for o caso.
+  // Precisa ser chamado sempre no carregamento da página — é isso
+  // que consolida a sessão em produção/mobile.
+  finalizarLoginRedirect();
 
   // Detecta em qual página estamos e carrega os dados certos
   if (document.getElementById("testimonialsGrid")) {
