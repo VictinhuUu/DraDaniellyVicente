@@ -69,21 +69,53 @@ const COLLECTION_NAME = "avaliacoes";
    =========================================================== */
 
 /**
+ * Detecta se o navegador roda sobre o motor WebKit do iOS
+ * (Safari, e também Brave/Chrome/Firefox no iOS — a Apple obriga
+ * todos os navegadores no iOS a usar o WebKit por baixo, então
+ * "Brave no iPhone" tem o mesmo comportamento de auth que Safari).
+ *
+ * Nesses navegadores, signInWithPopup é instável para login do
+ * Google: o popup abre, o Google autentica, mas a aba original
+ * não recebe a notificação da sessão (armazenamento é isolado
+ * entre a aba principal e o popup). O resultado é o login
+ * "acontecer" sem nunca refletir na página — exatamente o
+ * comportamento observado. Por isso, no iOS usamos redirect
+ * diretamente, sem tentar popup primeiro.
+ */
+function isIOS() {
+  const ua = navigator.userAgent || "";
+  const isIphoneOrIpad = /iPad|iPhone|iPod/.test(ua);
+  // iPadOS moderno se identifica como Mac, mas tem suporte a touch
+  const isIpadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+  return isIphoneOrIpad || isIpadOS;
+}
+
+/**
  * Abre o fluxo de login do Google.
  *
- * Estratégia: tenta popup primeiro. Popup evita boa parte dos
- * bloqueios que navegadores como Brave, Safari e alguns Android
- * aplicam sobre o fluxo de signInWithRedirect (Shields/anti-tracking
- * podem interceptar o redirect e deixar o clique "morto", sem
- * nenhum erro no console). Se o navegador bloquear o popup
- * (ex.: bloqueador de pop-ups ativo), cai automaticamente para
- * signInWithRedirect como alternativa.
+ * Estratégia: no iOS, usa signInWithRedirect diretamente (ver
+ * isIOS()). Em outros navegadores, tenta popup primeiro — popup
+ * evita boa parte dos bloqueios que navegadores como Brave desktop
+ * aplicam sobre o fluxo de redirect (Shields/anti-tracking podem
+ * interceptar o redirect e deixar o clique "morto", sem nenhum
+ * erro no console). Se o popup for bloqueado, cai automaticamente
+ * para signInWithRedirect como alternativa.
  */
 async function loginComGoogle() {
   try {
     await setPersistence(auth, browserLocalPersistence);
   } catch (error) {
     console.error("Erro ao configurar persistência:", error);
+  }
+
+  if (isIOS()) {
+    try {
+      await signInWithRedirect(auth, provider);
+    } catch (error) {
+      console.error("Erro ao fazer login via redirect (iOS):", error.code, error.message);
+      exibirErro("Não foi possível entrar com o Google. Tente novamente.");
+    }
+    return;
   }
 
   try {
