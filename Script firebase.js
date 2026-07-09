@@ -106,16 +106,23 @@ function observarAutenticacao() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // Usuário logado
-      btnLogin.style.display = "none";
-      formWrapper.style.display = "block";
-      userInfo.style.display = "flex";
-      userPhoto.src = user.photoURL || "";
-      userName.textContent = user.displayName || "Usuário";
+      btnLogin.style.setProperty("display", "none", "important");
+      
+      // Força o wrapper do formulário a aparecer mudando para 'block' de forma prioritária
+      if (formWrapper) {
+        formWrapper.style.setProperty("display", "block", "important");
+      }
+      
+      if (userInfo) {
+        userInfo.style.setProperty("display", "flex", "important");
+        userPhoto.src = user.photoURL || "";
+        userName.textContent = user.displayName || "Usuário";
+      }
     } else {
       // Usuário deslogado
-      btnLogin.style.display = "inline-flex";
-      formWrapper.style.display = "none";
-      userInfo.style.display = "none";
+      btnLogin.style.setProperty("display", "inline-flex", "important");
+      if (formWrapper) formWrapper.style.setProperty("display", "none", "important");
+      if (userInfo) userInfo.style.setProperty("display", "none", "important");
     }
   });
 
