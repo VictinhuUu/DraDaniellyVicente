@@ -17,7 +17,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect, // <-- Troque signInWithPopup por este
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -69,8 +69,7 @@ const COLLECTION_NAME = "avaliacoes";
  */
 async function loginComGoogle() {
   try {
-    await signInWithPopup(auth, provider);
-    // onAuthStateChanged cuida de atualizar a UI automaticamente
+    await signInWithRedirect(auth, provider); // <-- Troque signInWithPopup por este
   } catch (error) {
     console.error("Erro ao fazer login:", error);
     exibirErro("Não foi possível entrar com o Google. Tente novamente.");
