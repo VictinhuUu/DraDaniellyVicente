@@ -1,5 +1,5 @@
 /* ===========================================================
-   DRA. DANIELLY VICENTE — SCRIPT.JS
+    — SCRIPT.JS
    ===========================================================
    1. Loader inicial
    2. Header com efeito de rolagem
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================
-     3. MENU MOBILE (HAMBÚRGUER)
+     3. MENU MOBILE 
      ========================================================= */
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('mainNav');
@@ -98,11 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================================================
      5. ANIMAÇÃO "REVEAL" AO ROLAR A PÁGINA
-     Qualquer elemento com atributo data-reveal aparece
-     suavemente quando entra na tela.
      ========================================================= */
-  const revealElements = document.querySelectorAll('[data-reveal]');
-
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -115,7 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -60px 0px'
   });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  function observarRevealElements() {
+    document.querySelectorAll('[data-reveal]:not(.is-visible)').forEach(el => revealObserver.observe(el));
+  }
+
+  observarRevealElements();
+
+  // Exposto globalmente para que conteúdo inserido dinamicamente
+  // (ex.: cards de depoimentos vindos do Firestore) também
+  // ganhe a animação de entrada ao rolar a página.
+  window.reobservarReveal = observarRevealElements;
 
 
   /* =========================================================

@@ -13,22 +13,22 @@
   <meta name="author" content="Dra. Danielly Vicente">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (compartilhamento em redes sociais) -->
+  <!-- Open Graph  -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dra. Danielly Vicente | Cirurgiã-Dentista">
   <meta property="og:description" content="Transformando sorrisos através de uma odontologia humanizada e personalizada.">
   <meta property="og:image" content="images/og-cover.jpg">
   <meta property="og:locale" content="pt_BR">
 
-  <!-- FAVICON — troque o arquivo em /images/favicon.png -->
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- Fontes (Google Fonts) -->
+  <!-- Fontes  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Ícones (Remix Icon via CDN, leve e sem framework pesado) -->
+  <!-- Ícones  -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -51,7 +51,6 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="#home" class="brand">
-        <!-- NOME DA MARCA — altere se necessário -->
         <span>Dra.</span> Danielly Vicente
       </a>
 
@@ -117,7 +116,7 @@
 
       <div class="hero-media" data-reveal>
         <div class="hero-photo-frame">
-          <!-- FOTO PRINCIPAL DA DOUTORA — substitua em /images/doutora-hero.jpg -->
+          <!-- FOTO PRINCIPAL DA DOUTORA -->
           <img src="imagem prof.jpeg"" alt="Dra. Danielly Vicente, cirurgiã-dentista" class="hero-photo" />
         </div>
         <div class="hero-badge">
@@ -141,7 +140,7 @@
   <section class="section about" id="sobre">
     <div class="container about-grid">
       <div class="about-media" data-reveal>
-        <!-- FOTO SECUNDÁRIA (consultório, retrato, etc.) — substitua em /images/doutora-sobre.jpg -->
+        <!-- FOTO SECUNDÁRIA -->
         <img src="img2.jpeg" alt="Dra. Danielly Vicente em atendimento" class="about-photo">
         <div class="about-photo-frame"></div>
       </div>
@@ -150,7 +149,6 @@
         <p class="eyebrow">Sobre a doutora</p>
         <h2>Uma trajetória dedicada a sorrisos autênticos</h2>
 
-        <!-- TEXTO DE HISTÓRIA — edite livremente -->
         <p class="about-lead">
           Cirurgiã-dentista com sólida trajetória em clínica geral, atuando com excelência tanto 
           no setor público quanto no privado. Atualização em Endodontia e Cirurgia Oral 
@@ -207,31 +205,41 @@
       <div class="specialties-grid">
 
         <article class="card specialty-card" data-reveal>
-          <div class="card-icon"><i class="ri-magic-line"></i></div>
+  <div class="card-icon">
+    <img src="icons/Lentes.png" alt="Ícone Lentes de Contato" class="meu-icone-personalizado">
+  </div>
           <h3>Lentes de Contato Dental</h3>
           <p>Sorrisos uniformes e naturais, com técnica minimamente invasiva e resultado duradouro.</p>
         </article>
 
         <article class="card specialty-card" data-reveal>
-          <div class="card-icon"><i class="ri-sun-line"></i></div>
+  <div class="card-icon">
+    <img src="icons/Clareamento.png" alt="Ícone Clareamento Dental" class="meu-icone-personalizado">
+  </div>
           <h3>Clareamento Dental</h3>
           <p>Dentes mais claros e saudáveis com protocolos seguros e acompanhamento profissional.</p>
         </article>
 
         <article class="card specialty-card" data-reveal>
-          <div class="card-icon"><i class="ri-tools-line"></i></div>
+  <div class="card-icon">
+    <img src="icons/implantes dentario.png" alt="Ícone Implantes Dentários" class="meu-icone-personalizado">
+  </div>
           <h3>Implantes Dentários</h3>
           <p>Reposição de dentes com tecnologia de ponta, conforto e segurança em cada etapa.</p>
         </article>
 
         <article class="card specialty-card" data-reveal>
-          <div class="card-icon"><i class="ri-shield-star-line"></i></div>
+  <div class="card-icon">
+    <img src="icons/Estética Odontológica.png" alt="Ícone Estética Odontológica" class="meu-icone-personalizado">
+  </div>
           <h3>Estética Odontológica</h3>
           <p>Tratamentos personalizados que unem função e beleza para um sorriso harmônico.</p>
         </article>
 
         <article class="card specialty-card" data-reveal>
-          <div class="card-icon"><i class="ri-scissors-2-line"></i></div>
+  <div class="card-icon">
+    <img src="icons/Cirurgias Odontológicas.png" alt="Ícone Cirurgias Odontológicas" class="meu-icone-personalizado">
+  </div>
           <h3>Cirurgias Odontológicas</h3>
           <p>Procedimentos cirúrgicos realizados com precisão técnica e total cuidado com o paciente.</p>
         </article>
@@ -312,44 +320,22 @@
         <p class="eyebrow">O que dizem os pacientes</p>
         <h2>Depoimentos</h2>
       </div>
-
-      <div class="testimonials-grid">
-        <article class="card testimonial-card" data-reveal>
-          <div class="stars" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
-          <p>“Me senti acolhida desde a primeira consulta. O resultado do meu sorriso superou todas as expectativas!”</p>
-          <div class="testimonial-author">
-            <img src="aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Paciente Mariana Souza">
-            <div>
-              <strong>Mariana Souza</strong>
-              <span>Lentes de Contato Dental</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card testimonial-card" data-reveal>
-          <div class="stars" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
-          <p>“Profissionalismo, cuidado e muita atenção aos detalhes. Recomendo de olhos fechados.”</p>
-          <div class="testimonial-author">
-            <img src="alex-suprun-ZHvM3XIOHoE-unsplash.jpg" alt="Paciente Carlos Eduardo">
-            <div>
-              <strong>Carlos Eduardo</strong>
-              <span>Implante Dentário</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card testimonial-card" data-reveal>
-          <div class="stars" aria-label="Avaliação 5 de 5 estrelas">★★★★★</div>
-          <p>“A Dra. Danielly explica tudo com calma e carinho. Hoje tenho muito mais confiança no meu sorriso.”</p>
-          <div class="testimonial-author">
-            <img src="juliana.jpg" alt="Paciente Juliana Alves">
-            <div>
-              <strong>Juliana Alves</strong>
-              <span>Clareamento Dental</span>
-            </div>
-          </div>
-        </article>
-      </div> 
+ 
+      <!--
+        GRID DINÂMICO — preenchido via Firestore por script-firebase.js
+        (exibe apenas os 3 depoimentos mais recentes).
+        Os cards são gerados com as mesmas classes: .card,
+        .testimonial-card, .testimonial-author, .stars
+      -->
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <p class="testimonials-empty">Carregando depoimentos...</p>
+      </div>
+ 
+      <div class="testimonials-cta" data-reveal>
+        <a href="avaliacoes.html" class="btn btn-outline">
+          Ver todas as avaliações <i class="ri-arrow-right-line"></i>
+        </a>
+      </div>
     </div> 
   </section>
   
@@ -415,11 +401,10 @@
 
       <!-- LADO DIREITO: FOTO -->
       <div class="contact-image-wrapper" data-reveal>
-        <!-- Vi na sua print que carregou a foto da doutora, se quiser a da criança é só garantir que o src="img1.png" está correto aqui -->
         <img src="img1.png" alt="Paciente" class="contact-photo" />
       </div>
 
-    </div> <!-- FIM DO CONTAINER CONTACT-GRID (A foto estava caindo fora dessa div) -->
+    </div> 
   </section>
 
   

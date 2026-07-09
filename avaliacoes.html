@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ======================================================
+       TITULO, DESCRIÇÃO 
+  ====================================================== -->
+  <title>Avaliações de Pacientes | Dra. Danielly Vicente</title>
+  <meta name="description" content="Veja todas as avaliações e depoimentos de pacientes da Dra. Danielly Vicente, Cirurgiã-Dentista, e deixe também a sua avaliação.">
+  <meta name="keywords" content="avaliações, depoimentos, cirurgiã-dentista, dentista, pacientes">
+  <meta name="author" content="Dra. Danielly Vicente">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph  -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Avaliações de Pacientes | Dra. Danielly Vicente">
+  <meta property="og:description" content="Confira as avaliações de quem já viveu a experiência de um sorriso transformado.">
+  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Fontes  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       LOADER INICIAL (idêntico ao da Home)
+  ====================================================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-letter">D</span>
+      <span class="loader-ring"></span>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       HEADER / MENU FIXO (idêntico ao da Home)
+  ====================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html#home" class="brand">
+        <span>Dra.</span> Danielly Vicente
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html#home" class="nav-link">Início</a></li>
+          <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="index.html#especialidades" class="nav-link">Especialidades</a></li>
+          <li><a href="index.html#resultados" class="nav-link">Resultados</a></li>
+          <li><a href="avaliacoes.html" class="nav-link active">Depoimentos</a></li>
+          <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+        </ul>
+        <!-- WHATSAPP  -->
+        <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta"
+           class="btn btn-nav-cta" target="_blank" rel="noopener">
+          Agendar consulta
+        </a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       CABEÇALHO DA PÁGINA DE AVALIAÇÕES
+  ====================================================== -->
+  <section class="reviews-hero">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">O que dizem os pacientes</p>
+        <h2>Todas as avaliações</h2>
+        <p class="section-sub">
+          Histórias reais de quem viveu a experiência de transformar o sorriso
+          com a Dra. Danielly Vicente.
+        </p>
+        <span class="reviews-count" id="avaliacoesTotal"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       PAINEL DE INTERAÇÃO: LOGIN COM GOOGLE + FORMULÁRIO
+  ====================================================== -->
+  <section class="section reviews-panel-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="card review-panel" data-reveal>
+
+        <!-- Estado: usuário deslogado -->
+        <p class="review-panel-intro">
+          Já foi paciente da Dra. Danielly? Compartilhe sua experiência
+          fazendo login com sua conta Google.
+        </p>
+
+        <button id="btnLoginGoogle" class="btn btn-google">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/>
+            <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.6 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+            <path fill="#4CAF50" d="M24 44c5.4 0 10.3-2.1 14-5.5l-6.5-5.5C29.4 34.9 26.8 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.6 39.6 16.2 44 24 44z"/>
+            <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.5 5.5C39.9 37 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/>
+          </svg>
+          Fazer login com o Google para avaliar
+        </button>
+
+        <!-- Estado: usuário logado -->
+        <div class="user-info" id="userInfo">
+          <img id="userPhoto" src="" alt="Sua foto de perfil" referrerpolicy="no-referrer">
+          <div class="user-info-name">
+            <strong id="userName"></strong>
+            <button id="btnLogout" type="button">Sair da conta</button>
+          </div>
+        </div>
+
+        <div class="avaliacao-form-wrapper" id="avaliacaoFormWrapper">
+          <form id="avaliacaoForm">
+            <textarea
+              id="avaliacaoTextarea"
+              maxlength="500"
+              placeholder="Conte como foi sua experiência com a Dra. Danielly Vicente..."
+              required
+            ></textarea>
+            <div class="avaliacao-form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="ri-send-plane-line"></i> Publicar avaliação
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-feedback" id="avaliacaoFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       GRID COMPLETO DE AVALIAÇÕES (dinâmico via Firestore)
+  ====================================================== -->
+  <section class="section reviews-grid-section">
+    <div class="container">
+      <div class="testimonials-grid" id="avaliacoesGrid">
+        <p class="testimonials-empty">Carregando avaliações...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       RODAPÉ (idêntico ao da Home)
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html#home" class="brand"><span>Dra.</span> Danielly Vicente</a>
+      <p>Cirurgiã-Dentista · CRO 77-20-MS</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Dra. Danielly Vicente. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+  ====================================================== -->
+  <a href="https://wa.me/5567981190053?text=Ol%C3%A1%2C%20Dra.%20Danielly%20Vicente!%20Vim%20pelo%20Facebook%20e%20gostaria%20de%20agendar%20uma%20consulta"
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script type="module" src="script-firebase.js"></script>
+</body>
+</html>

@@ -19,8 +19,6 @@
 
 /* ===========================================================
    1. VARIÁVEIS GLOBAIS
-   Para trocar a paleta de cores do site inteiro, altere
-   apenas os valores abaixo.
    =========================================================== */
 :root {
   /* --- Paleta principal --- */
@@ -849,6 +847,199 @@ h1, h2, h3, h4 {
   color: var(--color-text-secondary);
 }
 
+/* --- Avatar fallback (quando não há foto do Google) --- */
+.testimonial-avatar-fallback {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+/* --- Estado vazio / carregando --- */
+.testimonials-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 2rem 0;
+  font-size: 0.98rem;
+}
+
+/* --- CTA "Ver todas as avaliações" na Home --- */
+.testimonials-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+
+/* ===========================================================
+   10.1 PÁGINA DE AVALIAÇÕES — Login, Formulário e Grid completo
+   =========================================================== */
+.reviews-hero {
+  padding: 10rem 0 2rem;
+  text-align: center;
+  background: linear-gradient(160deg, var(--color-bg) 55%, var(--color-bg-alt) 100%);
+}
+
+.reviews-hero .section-head {
+  margin-bottom: 0;
+}
+
+.reviews-count {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* --- Painel de interação (login / formulário) --- */
+.review-panel {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  padding: 2.4rem;
+  text-align: center;
+}
+
+.review-panel-intro {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.6rem;
+}
+
+.btn-google {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid rgba(46, 30, 22, 0.18);
+  box-shadow: var(--shadow-card);
+}
+
+.btn-google:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-google img,
+.btn-google svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* --- Informações do usuário logado --- */
+.user-info {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.user-info img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent-soft);
+}
+
+.user-info-name {
+  text-align: left;
+}
+
+.user-info-name strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.user-info-name button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.user-info-name button:hover {
+  color: var(--color-primary);
+}
+
+/* --- Formulário de avaliação --- */
+.avaliacao-form-wrapper {
+  display: none;
+  text-align: left;
+}
+
+.avaliacao-form-wrapper textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(46, 30, 22, 0.18);
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.avaliacao-form-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.avaliacao-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-feedback {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.form-feedback--erro {
+  background: #FBEAE6;
+  color: #A8462F;
+}
+
+.form-feedback--sucesso {
+  background: #E8F3EA;
+  color: #2E7D4F;
+}
+
+/* --- Grid completo de avaliações --- */
+.reviews-grid-section {
+  padding: 0 0 var(--section-padding);
+}
+
+#avaliacoesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+#avaliacoesGrid .testimonial-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* ===========================================================
    11. CONTATO
    =========================================================== */
@@ -1046,7 +1237,8 @@ h1, h2, h3, h4 {
 
   .specialties-grid,
   .results-grid,
-  .testimonials-grid {
+  .testimonials-grid,
+  #avaliacoesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1111,8 +1303,13 @@ h1, h2, h3, h4 {
 
   .specialties-grid,
   .results-grid,
-  .testimonials-grid {
+  .testimonials-grid,
+  #avaliacoesGrid {
     grid-template-columns: 1fr;
+  }
+
+  .review-panel {
+    padding: 1.8rem;
   }
 
   .hero-badge {
